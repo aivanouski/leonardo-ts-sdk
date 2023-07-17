@@ -83,6 +83,13 @@ export class Variation {
                         JSON.parse(decodedRes),
                         operations.CreateVariationUpscale200ApplicationJSON
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -145,6 +152,13 @@ export class Variation {
                     res.getVariationById200ApplicationJSONObject = utils.objectToClass(
                         JSON.parse(decodedRes),
                         operations.GetVariationById200ApplicationJSON
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;

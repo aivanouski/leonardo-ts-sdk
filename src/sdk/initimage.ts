@@ -71,6 +71,13 @@ export class InitImage {
                         JSON.parse(decodedRes),
                         operations.DeleteInitImageById200ApplicationJSON
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -133,6 +140,13 @@ export class InitImage {
                     res.getInitImageById200ApplicationJSONObject = utils.objectToClass(
                         JSON.parse(decodedRes),
                         operations.GetInitImageById200ApplicationJSON
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -210,6 +224,13 @@ export class InitImage {
                     res.uploadInitImage200ApplicationJSONObject = utils.objectToClass(
                         JSON.parse(decodedRes),
                         operations.UploadInitImage200ApplicationJSON
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;

@@ -84,6 +84,13 @@ export class Dataset {
                         JSON.parse(decodedRes),
                         operations.CreateDataset200ApplicationJSON
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -147,6 +154,13 @@ export class Dataset {
                         JSON.parse(decodedRes),
                         operations.DeleteDatasetById200ApplicationJSON
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -209,6 +223,13 @@ export class Dataset {
                     res.getDatasetById200ApplicationJSONObject = utils.objectToClass(
                         JSON.parse(decodedRes),
                         operations.GetDatasetById200ApplicationJSON
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -289,6 +310,13 @@ export class Dataset {
                         JSON.parse(decodedRes),
                         operations.UploadDatasetImage200ApplicationJSON
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -367,6 +395,13 @@ export class Dataset {
                     res.uploadDatasetImageFromGen200ApplicationJSONObject = utils.objectToClass(
                         JSON.parse(decodedRes),
                         operations.UploadDatasetImageFromGen200ApplicationJSON
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
