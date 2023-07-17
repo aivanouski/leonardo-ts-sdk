@@ -64,6 +64,13 @@ export class User {
                         JSON.parse(decodedRes),
                         operations.GetUserSelf200ApplicationJSON
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
